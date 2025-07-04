@@ -19,6 +19,3 @@ test = "research.main:test"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
-[tool.poetry.dependencies]
-python = ">=3.10,<=3.13"
-sqlite3 = ">=3.35.0"
