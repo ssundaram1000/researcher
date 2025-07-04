@@ -4,6 +4,7 @@ __import__("pysqlite3")          # load the wheel-based build
 import sys
 sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 from research.crew import ResearchCrew
+import streamlit as st
 
 # This main file is intended to be a way for you to run your
 # crew locally, so refrain from adding unnecessary logic into this file.
@@ -17,8 +18,9 @@ def run():
     inputs = {
         'topic': 'AI LLMs'
     }
-    ResearchCrew().crew().kickoff(inputs=inputs)
-    print("Hello, World!")
+    result = ResearchCrew().crew().kickoff(inputs=inputs)
+    st.subheader("Results of your research project:")
+    st.write(result)
 
 
 def train():
