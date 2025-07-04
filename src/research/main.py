@@ -1,5 +1,8 @@
 #!/usr/bin/env python
+# --- monkey-patch SQLite for Chroma ----------------
+__import__("pysqlite3")          # load the wheel-based build
 import sys
+sys.modules["sqlite3"] = sys.modules.pop("pysqlite3")
 from research.crew import ResearchCrew
 
 # This main file is intended to be a way for you to run your
