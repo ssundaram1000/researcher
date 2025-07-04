@@ -18,6 +18,7 @@ def run():
         'topic': 'AI LLMs'
     }
     ResearchCrew().crew().kickoff(inputs=inputs)
+    print("Hello, World!")
 
 
 def train():
